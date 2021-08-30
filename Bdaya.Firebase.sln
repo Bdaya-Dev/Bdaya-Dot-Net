@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31612.314
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bdaya.Firebase.Firestore", "Bdaya.Firebase.Firestore\Bdaya.Firebase.Firestore.csproj", "{15423A36-3246-42BD-90FC-F2FA63ACAC94}"
+EndProject
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "Bdaya.Firebase.Functions.AuthListener", "Bdaya.Firebase.Functions.AuthListener\Bdaya.Firebase.Functions.AuthListener.njsproj", "{4F03584A-97C0-4F69-80FE-249723AC1ADA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{15423A36-3246-42BD-90FC-F2FA63ACAC94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15423A36-3246-42BD-90FC-F2FA63ACAC94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15423A36-3246-42BD-90FC-F2FA63ACAC94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15423A36-3246-42BD-90FC-F2FA63ACAC94}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F03584A-97C0-4F69-80FE-249723AC1ADA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F03584A-97C0-4F69-80FE-249723AC1ADA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F03584A-97C0-4F69-80FE-249723AC1ADA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F03584A-97C0-4F69-80FE-249723AC1ADA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {70E2A440-C4D9-4D9D-9769-5ECEBD979257}
+	EndGlobalSection
+EndGlobal
