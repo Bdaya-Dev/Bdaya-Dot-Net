@@ -33,16 +33,13 @@
   <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsToolsV2.targets" />
   <ItemGroup>
     <Content Include=".eslintrc.js" />
-    <Content Include=".firebaserc" />
     <Content Include=".gitignore" />
-    <Content Include="firebase.json" />
     <Content Include="package-lock.json" />
     <Content Include="package.json" />
     <Content Include="README.md" />
     <Content Include="tsconfig.dev.json" />
     <Content Include="tsconfig.json" />
     <Content Include="lib\index.d.ts" />
-    <Content Include="package.json.1123557383" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="src\index.ts" />
