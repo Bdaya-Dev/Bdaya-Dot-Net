@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">14.0</VisualStudioVersion>
@@ -11,11 +11,11 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>4f03584a-97c0-4f69-80fe-249723ac1ada</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>
+    <StartupFile>&#xD;
     </StartupFile>
     <StartWebBrowser>False</StartWebBrowser>
     <StartWebBrowser>false</StartWebBrowser>
-    <SearchPath>
+    <SearchPath>&#xD;
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
@@ -29,24 +29,24 @@
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
-  <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsToolsV2.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')"/>
+  <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsToolsV2.targets"/>
   <ItemGroup>
-    <Content Include=".eslintrc.js" />
-    <Content Include=".gitignore" />
-    <Content Include="package-lock.json" />
-    <Content Include="package.json" />
-    <Content Include="README.md" />
-    <Content Include="tsconfig.dev.json" />
-    <Content Include="tsconfig.json" />
-    <Content Include="lib\index.d.ts" />
+    <Content Include=".eslintrc.js"/>
+    <Content Include=".gitignore"/>
+    <Content Include="package-lock.json"/>
+    <Content Include="package.json"/>
+    <Content Include="README.md"/>
+    <Content Include="tsconfig.dev.json"/>
+    <Content Include="tsconfig.json"/>
+    <Content Include="lib\index.d.ts"/>
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="src\index.ts" />
+    <TypeScriptCompile Include="src\index.ts"/>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="lib\" />
-    <Folder Include="src\" />
+    <Folder Include="lib\"/>
+    <Folder Include="src\"/>
   </ItemGroup>
   <ProjectExtensions>
     <VisualStudio>
@@ -65,20 +65,20 @@
       </FlavorProperties>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
         <WebProjectProperties>
-          <StartPageUrl>
+          <StartPageUrl>&#xD;
           </StartPageUrl>
           <StartAction>CurrentPage</StartAction>
           <AspNetDebugging>True</AspNetDebugging>
           <SilverlightDebugging>False</SilverlightDebugging>
           <NativeDebugging>False</NativeDebugging>
           <SQLDebugging>False</SQLDebugging>
-          <ExternalProgram>
+          <ExternalProgram>&#xD;
           </ExternalProgram>
-          <StartExternalURL>
+          <StartExternalURL>&#xD;
           </StartExternalURL>
-          <StartCmdLineArguments>
+          <StartCmdLineArguments>&#xD;
           </StartCmdLineArguments>
-          <StartWorkingDirectory>
+          <StartWorkingDirectory>&#xD;
           </StartWorkingDirectory>
           <EnableENC>False</EnableENC>
           <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
