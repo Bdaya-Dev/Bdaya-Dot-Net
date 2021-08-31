@@ -1,22 +1,22 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
 		<TargetFramework>net6.0</TargetFramework>
 		<Nullable>enable</Nullable>
 
-		<PackageId>Bdaya.Firebase.Firestore</PackageId>
+		<PackageId>Bdaya.Firebase.Auth</PackageId>		
 		<Authors>ahmednfwela</Authors>
 		<Company>Bdaya-Dev</Company>
-		<PackageDescription>Helpers for firebase auth, includes AuthListener that listens to a Users collection and syncs it up with a local database</PackageDescription>
+		<PackageDescription>Helpers for using jwt tokens created by firebase auth</PackageDescription>
 		<RepositoryUrl>https://github.com/Bdaya-Dev/Bdaya.Firebase</RepositoryUrl>
 		<PackageIcon>icon.jpg</PackageIcon>
 	</PropertyGroup>
 
 	<ItemGroup>
 		<None Include="icon.jpg" Pack="true" Visible="false" PackagePath="" />
-		<PackageReference Include="FirebaseAdmin" Version="2.2.0" />
-		<PackageReference Include="Google.Cloud.Firestore" Version="2.4.0" />
+		<PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.8" />
 	</ItemGroup>
+
 	<Import Project="../Shared.targets" />
 
 </Project>
