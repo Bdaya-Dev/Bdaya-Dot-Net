@@ -9,11 +9,9 @@
 		<Company>Bdaya-Dev</Company>
 		<PackageDescription>Helpers for using jwt tokens created by firebase auth</PackageDescription>
 		<RepositoryUrl>https://github.com/Bdaya-Dev/Bdaya.Firebase</RepositoryUrl>
-		<PackageIcon>icon.jpg</PackageIcon>
 	</PropertyGroup>
 
 	<ItemGroup>
-		<None Include="icon.jpg" Pack="true" Visible="false" PackagePath="" />
 		<PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.9" />
 	</ItemGroup>
 

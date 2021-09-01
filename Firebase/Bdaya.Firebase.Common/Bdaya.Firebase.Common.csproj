@@ -9,11 +9,9 @@
 		<Company>Bdaya-Dev</Company>
 		<PackageDescription>Common Helpers for firebase</PackageDescription>
 		<RepositoryUrl>https://github.com/Bdaya-Dev/Bdaya.Firebase</RepositoryUrl>
-		<PackageIcon>icon.jpg</PackageIcon>
 	</PropertyGroup>
 
 	<ItemGroup>
-		<None Include="icon.jpg" Pack="true" Visible="false" PackagePath="" />
 		<Folder Include="Settings\" />
 	</ItemGroup>
 

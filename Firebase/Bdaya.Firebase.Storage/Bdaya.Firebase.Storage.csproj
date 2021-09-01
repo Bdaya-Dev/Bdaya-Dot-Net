@@ -8,12 +8,10 @@
 		<Authors>ahmednfwela</Authors>
 		<Company>Bdaya-Dev</Company>
 		<PackageDescription>Helpers for uploading files to firebase storage</PackageDescription>
-		<RepositoryUrl>https://github.com/Bdaya-Dev/Bdaya.Firebase</RepositoryUrl>
-		<PackageIcon>icon.jpg</PackageIcon>
+		<RepositoryUrl>https://github.com/Bdaya-Dev/Bdaya.Firebase</RepositoryUrl>		
 	</PropertyGroup>
 
 	<ItemGroup>
-		<None Include="icon.jpg" Pack="true" Visible="false" PackagePath="" />
 		<PackageReference Include="Google.Cloud.Storage.V1" Version="3.5.0" />
 		<PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="2.2.0" />
 	</ItemGroup>
