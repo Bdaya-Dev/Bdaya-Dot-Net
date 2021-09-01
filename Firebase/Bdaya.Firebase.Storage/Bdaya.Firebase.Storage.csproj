@@ -22,5 +22,5 @@
 	  <ProjectReference Include="..\Bdaya.Firebase.Common\Bdaya.Firebase.Common.csproj" />
 	</ItemGroup>
 
-	<Import Project="../Shared.targets" />
+	<Import Project="../FirebaseShared.targets" />
 </Project>

@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<LangVersion>preview</LangVersion>
+		<Nullable>enable</Nullable>
+		<PackageId>Bdaya.Common</PackageId>
+		<Company>Bdaya-Dev</Company>
+		<PackageDescription>Common classes</PackageDescription>
+		<RepositoryUrl>https://github.com/Bdaya-Dev/Bdaya.Net.Responses</RepositoryUrl>
+	</PropertyGroup>
+	<Import Project="../Shared.targets" />
+
+</Project>

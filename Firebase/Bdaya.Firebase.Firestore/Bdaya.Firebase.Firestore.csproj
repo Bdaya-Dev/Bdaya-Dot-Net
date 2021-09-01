@@ -4,18 +4,19 @@
 		<TargetFramework>net6.0</TargetFramework>
 		<Nullable>enable</Nullable>
 
-		<PackageId>Bdaya.Firebase.Common</PackageId>
+		<PackageId>Bdaya.Firebase.Firestore</PackageId>
 		<Authors>ahmednfwela</Authors>
 		<Company>Bdaya-Dev</Company>
-		<PackageDescription>Common Helpers for firebase</PackageDescription>
+		<PackageDescription>Helpers for firebase auth, includes AuthListener that listens to a Users collection and syncs it up with a local database</PackageDescription>
 		<RepositoryUrl>https://github.com/Bdaya-Dev/Bdaya.Firebase</RepositoryUrl>
 		<PackageIcon>icon.jpg</PackageIcon>
 	</PropertyGroup>
 
 	<ItemGroup>
 		<None Include="icon.jpg" Pack="true" Visible="false" PackagePath="" />
-		<Folder Include="Settings\" />
+		<PackageReference Include="FirebaseAdmin" Version="2.2.0" />
+		<PackageReference Include="Google.Cloud.Firestore" Version="2.4.0" />
 	</ItemGroup>
+	<Import Project="../FirebaseShared.targets" />
 
-	<Import Project="../Shared.targets" />
 </Project>

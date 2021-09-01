@@ -17,7 +17,7 @@ public abstract class FileHostingServiceBase<TFile> : IFileHostingService<TFile>
 
 
     public abstract string GetFileSubPath(string UploaderId, string fileName, string contentType);
-    public abstract Task<IEnumerable<TFile>> AddFilesToDb(IReadOnlyList<UploadFileProposal> files, CancellationToken? cancellationToken = null);
+    public abstract Task<IEnumerable<TFile>> AddFilesToDb(IReadOnlyList<UploadFileProposal> files, CancellationToken cancellationToken = default);
     public abstract Task<Dictionary<string, TFile>> GetFilesByHash(string userId, IReadOnlySet<string> hash);
 
 
@@ -27,7 +27,7 @@ public abstract class FileHostingServiceBase<TFile> : IFileHostingService<TFile>
     /// <param name="UserName"></param>
     /// <param name="files"></param>
     /// <returns></returns>
-    public virtual async Task<IEnumerable<TFile>> UploadFiles(string? UserId, IEnumerable<IFormFile> files, CancellationToken? cancellationToken = null)
+    public virtual async Task<IEnumerable<TFile>> UploadFiles(string? UserId, IEnumerable<IFormFile> files, CancellationToken cancellationToken = default)
     {
         if (UserId == null)
         {
@@ -107,7 +107,7 @@ public abstract class FileHostingServiceBase<TFile> : IFileHostingService<TFile>
         }
         return (await AddFilesToDb(toAddList)).Concat(existingList);
     }
-    public virtual async Task<Google.Apis.Storage.v1.Data.Object?> GetBucketObject(IStorageFile file, CancellationToken? cancellationToken = null)
+    public virtual async Task<Google.Apis.Storage.v1.Data.Object?> GetBucketObject(IStorageFile file, CancellationToken cancellationToken = default)
     {
         try
         {

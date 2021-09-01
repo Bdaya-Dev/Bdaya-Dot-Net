@@ -1,0 +1,74 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31612.314
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9C398057-743D-4929-8F32-84D5765DCA37}"
+	ProjectSection(SolutionItems) = preProject
+		PackAll.ps1 = PackAll.ps1
+		PublishAll.ps1 = PublishAll.ps1
+		Shared.targets = Shared.targets
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bdaya.Common", "Bdaya.Common\Bdaya.Common.csproj", "{CB9431C2-D860-4EDF-988E-6C656CB4B06F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Firebase", "Firebase", "{3E38082A-C340-44E5-B25A-0D530DF3233A}"
+	ProjectSection(SolutionItems) = preProject
+		Firebase\FirebaseShared.targets = Firebase\FirebaseShared.targets
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bdaya.Firebase.Storage", "Firebase\Bdaya.Firebase.Storage\Bdaya.Firebase.Storage.csproj", "{76CB4742-6D15-4488-9A0D-0D0CB35DC2BE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bdaya.Firebase.Auth", "Firebase\Bdaya.Firebase.Auth\Bdaya.Firebase.Auth.csproj", "{E73FA8F9-10B8-4EA6-9644-C4B1683960CE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bdaya.Firebase.Common", "Firebase\Bdaya.Firebase.Common\Bdaya.Firebase.Common.csproj", "{6D7C87EC-F371-4CAD-9AFA-4BF779928FA2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bdaya.Firebase.Firestore", "Firebase\Bdaya.Firebase.Firestore\Bdaya.Firebase.Firestore.csproj", "{B312C164-82BA-4FC4-BCEC-0EF5A05ECCE0}"
+EndProject
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "Bdaya.Firebase.Functions.AuthListener", "Firebase\Bdaya.Firebase.Functions.AuthListener\Bdaya.Firebase.Functions.AuthListener.njsproj", "{4F03584A-97C0-4F69-80FE-249723AC1ADA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CB9431C2-D860-4EDF-988E-6C656CB4B06F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CB9431C2-D860-4EDF-988E-6C656CB4B06F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CB9431C2-D860-4EDF-988E-6C656CB4B06F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CB9431C2-D860-4EDF-988E-6C656CB4B06F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76CB4742-6D15-4488-9A0D-0D0CB35DC2BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76CB4742-6D15-4488-9A0D-0D0CB35DC2BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76CB4742-6D15-4488-9A0D-0D0CB35DC2BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76CB4742-6D15-4488-9A0D-0D0CB35DC2BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E73FA8F9-10B8-4EA6-9644-C4B1683960CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E73FA8F9-10B8-4EA6-9644-C4B1683960CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E73FA8F9-10B8-4EA6-9644-C4B1683960CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E73FA8F9-10B8-4EA6-9644-C4B1683960CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D7C87EC-F371-4CAD-9AFA-4BF779928FA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D7C87EC-F371-4CAD-9AFA-4BF779928FA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D7C87EC-F371-4CAD-9AFA-4BF779928FA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D7C87EC-F371-4CAD-9AFA-4BF779928FA2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B312C164-82BA-4FC4-BCEC-0EF5A05ECCE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B312C164-82BA-4FC4-BCEC-0EF5A05ECCE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B312C164-82BA-4FC4-BCEC-0EF5A05ECCE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B312C164-82BA-4FC4-BCEC-0EF5A05ECCE0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F03584A-97C0-4F69-80FE-249723AC1ADA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F03584A-97C0-4F69-80FE-249723AC1ADA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F03584A-97C0-4F69-80FE-249723AC1ADA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F03584A-97C0-4F69-80FE-249723AC1ADA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{76CB4742-6D15-4488-9A0D-0D0CB35DC2BE} = {3E38082A-C340-44E5-B25A-0D530DF3233A}
+		{E73FA8F9-10B8-4EA6-9644-C4B1683960CE} = {3E38082A-C340-44E5-B25A-0D530DF3233A}
+		{6D7C87EC-F371-4CAD-9AFA-4BF779928FA2} = {3E38082A-C340-44E5-B25A-0D530DF3233A}
+		{B312C164-82BA-4FC4-BCEC-0EF5A05ECCE0} = {3E38082A-C340-44E5-B25A-0D530DF3233A}
+		{4F03584A-97C0-4F69-80FE-249723AC1ADA} = {3E38082A-C340-44E5-B25A-0D530DF3233A}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {70E2A440-C4D9-4D9D-9769-5ECEBD979257}
+	EndGlobalSection
+EndGlobal

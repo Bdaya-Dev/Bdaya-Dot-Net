@@ -4,7 +4,7 @@
 		<TargetFramework>net6.0</TargetFramework>
 		<Nullable>enable</Nullable>
 
-		<PackageId>Bdaya.Firebase.Auth</PackageId>		
+		<PackageId>Bdaya.Firebase.Auth</PackageId>
 		<Authors>ahmednfwela</Authors>
 		<Company>Bdaya-Dev</Company>
 		<PackageDescription>Helpers for using jwt tokens created by firebase auth</PackageDescription>
@@ -14,9 +14,9 @@
 
 	<ItemGroup>
 		<None Include="icon.jpg" Pack="true" Visible="false" PackagePath="" />
-		<PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.8" />
+		<PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.9" />
 	</ItemGroup>
 
-	<Import Project="../Shared.targets" />
+	<Import Project="../FirebaseShared.targets" />
 
 </Project>
