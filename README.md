@@ -1,5 +1,5 @@
-# Bdaya.Firebase
+# Bdaya .Net Helpers
 
-a collection of firebase helpers for ASP.net and nodejs to help with common scenarios (e.g. using firebase auth and syncing it with asp.net)
+a collection of dotnet helpers for ASP.net core to help with common scenarios
 
 
