@@ -1,9 +1,6 @@
 ﻿using Google.Cloud.Storage.V1;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.StaticFiles;
-using Microsoft.Extensions.Options;
-using System.Security.Cryptography;
-using System.Text;
 
 namespace Bdaya.Firebase.Storage;
 
@@ -12,16 +9,16 @@ public abstract class FileHostingServiceBase<TFile> : IFileHostingService<TFile>
     private readonly FirebaseStorageSettings _settings;
     private readonly StorageClient _storageClient;
 
-    public FileHostingServiceBase(IOptions<FirebaseStorageSettings> settings, StorageClient storageClient)
+    public FileHostingServiceBase(FirebaseStorageSettings settings, StorageClient storageClient)
     {
-        _settings = settings.Value;
+        _settings = settings;
         _storageClient = storageClient;
     }
 
 
-    public abstract string GetFileSubPath(string UploaderId, string fileName);
-    public abstract Task<IEnumerable<TFile>> AddFilesToDb(IReadOnlyList<UploadFileProposal> files);
-    public abstract Task<TFile> GetFileByHash(string hash);
+    public abstract string GetFileSubPath(string UploaderId, string fileName, string contentType);
+    public abstract Task<IEnumerable<TFile>> AddFilesToDb(IReadOnlyList<UploadFileProposal> files, CancellationToken? cancellationToken = null);
+    public abstract Task<Dictionary<string, TFile>> GetFilesByHash(string userId, IReadOnlySet<string> hash);
 
 
     /// <summary>
@@ -30,7 +27,7 @@ public abstract class FileHostingServiceBase<TFile> : IFileHostingService<TFile>
     /// <param name="UserName"></param>
     /// <param name="files"></param>
     /// <returns></returns>
-    public virtual async Task<IEnumerable<TFile>> UploadFiles(string? UserId, IEnumerable<IFormFile> files)
+    public virtual async Task<IEnumerable<TFile>> UploadFiles(string? UserId, IEnumerable<IFormFile> files, CancellationToken? cancellationToken = null)
     {
         if (UserId == null)
         {
@@ -47,6 +44,8 @@ public abstract class FileHostingServiceBase<TFile> : IFileHostingService<TFile>
         var existingList = new List<TFile>();
         var hashesList = new HashSet<string>();
         var now = DateTime.Now;
+
+
         foreach (var (file, index) in files.Select((item, index) => (item, index)))
         {
             var nameWithExt = Path.GetFileName(file.FileName).RemoveInvalidChars();
@@ -75,17 +74,18 @@ public abstract class FileHostingServiceBase<TFile> : IFileHostingService<TFile>
                 {
                     hashesList.Add(hash);
                 }
-                var prevFile = await GetFileByHash(hash);
-                if (prevFile == null)
+                //TODO: optimize this by hashing files first, then uploading them to firebase
+                var prevFiles = await GetFilesByHash(UserId, new HashSet<string>() { hash });
+                if (!prevFiles.TryGetValue(hash, out var prevFile))
                 {
-                    var objectName = _settings.BucketSubPath + GetFileSubPath(UserId, name);
-                    memoryStream.Seek(0, SeekOrigin.Begin);
+                    var objectName = _settings.BucketSubPath + GetFileSubPath(UserId, name, contentType);
 
                     var dataObject = await _storageClient.UploadObjectAsync(_settings.BucketName, objectName, contentType, memoryStream);
 
                     var mediaLink = $"https://storage.googleapis.com/{_settings.BucketName}/{Uri.EscapeDataString(objectName)}";
                     toAddList.Add(new UploadFileProposal()
                     {
+                        ContentType = contentType,
                         UploaderId = UserId,
                         BucketName = _settings.BucketName,
                         FileSizeInBytes = file.Length,
@@ -107,38 +107,21 @@ public abstract class FileHostingServiceBase<TFile> : IFileHostingService<TFile>
         }
         return (await AddFilesToDb(toAddList)).Concat(existingList);
     }
-    public virtual async Task<string?> GetBucketMd5Hash(IStorageFile file)
+    public virtual async Task<Google.Apis.Storage.v1.Data.Object?> GetBucketObject(IStorageFile file, CancellationToken? cancellationToken = null)
     {
         try
         {
-            var objectName = _settings.BucketSubPath + GetFileSubPath(file.UploaderId, file.FileName);
+            var objectName = _settings.BucketSubPath + GetFileSubPath(file.UploaderId, file.FileName, file.ContentType);
             var res = await _storageClient.GetObjectAsync(_settings.BucketName, objectName);
             if (res == null || res.TimeDeleted != null)
             {
                 return null;
             }
-            var decodedHash = Convert.FromBase64String(res.Md5Hash);
-            return decodedHash.BytesToString();
+            return res;
         }
         catch
         {
             return null;
         }
     }
-
-    public virtual async Task<bool> CheckFileExistenceInBucket(IStorageFile file)
-    {
-        try
-        {
-            var objectName = file.ObjectName;
-            var res = await _storageClient.GetObjectAsync(file.BucketName, objectName);
-            return res != null && res.TimeDeleted == null;
-        }
-        catch
-        {
-            return false;
-        }
-    }
-
-
 }

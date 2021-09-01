@@ -12,4 +12,5 @@ public struct UploadFileProposal : IStorageFile
     public Google.Apis.Storage.v1.Data.Object StorageObject { get; set; }
     public string ObjectName { get; set; }
     public long FileSizeInBytes { get; set; }
+    public string ContentType { get; set; }
 }

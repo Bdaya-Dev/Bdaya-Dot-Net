@@ -15,6 +15,7 @@ public interface IStorageFile
     string MediaLink { get; set; }
     string UploaderId { get; set; }
     string OriginalFileName { get; set; }
+    public string ContentType { get; set; }
     DateTime UploadedAt { get; set; }
     string BucketName { get; set; }
     string ObjectName { get; set; }
