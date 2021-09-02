@@ -9,26 +9,26 @@ public static class ObjectExt
         return Task.FromResult(obj);
     }
 
-    public static IApiResult<T> AsSuccess<T>(this T obj, params string[] messages)
+    public static ApiResult<T> AsSuccess<T>(this T obj, params string[] messages)
     {
         if (messages == null || messages.Length == 0)
         {
-            return IApiResult<T>.Success(obj);
+            return ApiResult<T>.Success(obj);
         }
         else
         {
-            return IApiResult<T>.Success(obj, messages.ToList());
+            return ApiResult<T>.Success(obj, messages.ToList());
         }
     }
-    public static IApiResult<T> AsFail<T>(this T obj, params string[] messages)
+    public static ApiResult<T> AsFail<T>(this T obj, params string[] messages)
     {
         if (messages == null || messages.Length == 0)
         {
-            return IApiResult<T>.Success(obj);
+            return ApiResult<T>.Success(obj);
         }
         else
         {
-            return IApiResult<T>.Success(obj, messages.ToList());
+            return ApiResult<T>.Success(obj, messages.ToList());
         }
     }
 }

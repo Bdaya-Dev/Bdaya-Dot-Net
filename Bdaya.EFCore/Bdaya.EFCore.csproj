@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<PackageId>Bdaya.EFCore</PackageId>
+		<PackageDescription>Common ef core extensions for pagination, etc...</PackageDescription>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.9" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\Bdaya.Common\Bdaya.Common.csproj" />
+	</ItemGroup>
+	<Import Project="../Shared.targets" />
+
+</Project>

@@ -28,6 +28,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bdaya.Firebase.Firestore", 
 EndProject
 Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "Bdaya.Firebase.Functions.AuthListener", "Firebase\Bdaya.Firebase.Functions.AuthListener\Bdaya.Firebase.Functions.AuthListener.njsproj", "{4F03584A-97C0-4F69-80FE-249723AC1ADA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bdaya.EFCore", "Bdaya.EFCore\Bdaya.EFCore.csproj", "{8488F196-80F8-4E81-B58D-3004F60C82D5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -56,6 +58,10 @@ Global
 		{B312C164-82BA-4FC4-BCEC-0EF5A05ECCE0}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4F03584A-97C0-4F69-80FE-249723AC1ADA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4F03584A-97C0-4F69-80FE-249723AC1ADA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8488F196-80F8-4E81-B58D-3004F60C82D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8488F196-80F8-4E81-B58D-3004F60C82D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8488F196-80F8-4E81-B58D-3004F60C82D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8488F196-80F8-4E81-B58D-3004F60C82D5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

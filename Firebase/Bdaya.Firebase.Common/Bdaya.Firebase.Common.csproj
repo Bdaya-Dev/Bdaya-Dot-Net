@@ -1,14 +1,8 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-	<PropertyGroup>
-		<TargetFramework>net6.0</TargetFramework>
-		<Nullable>enable</Nullable>
-
+	<PropertyGroup>		
 		<PackageId>Bdaya.Firebase.Common</PackageId>
-		<Authors>ahmednfwela</Authors>
-		<Company>Bdaya-Dev</Company>
 		<PackageDescription>Common Helpers for firebase</PackageDescription>
-		<RepositoryUrl>https://github.com/Bdaya-Dev/Bdaya.Firebase</RepositoryUrl>
 	</PropertyGroup>
 
 	<ItemGroup>

@@ -1,14 +1,8 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFramework>net6.0</TargetFramework>
-		<Nullable>enable</Nullable>
-
 		<PackageId>Bdaya.Firebase.Storage</PackageId>
-		<Authors>ahmednfwela</Authors>
-		<Company>Bdaya-Dev</Company>
 		<PackageDescription>Helpers for uploading files to firebase storage</PackageDescription>
-		<RepositoryUrl>https://github.com/Bdaya-Dev/Bdaya.Firebase</RepositoryUrl>		
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -17,7 +11,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\Bdaya.Firebase.Common\Bdaya.Firebase.Common.csproj" />
+		<ProjectReference Include="..\Bdaya.Firebase.Common\Bdaya.Firebase.Common.csproj" />
 	</ItemGroup>
 
 	<Import Project="../FirebaseShared.targets" />
