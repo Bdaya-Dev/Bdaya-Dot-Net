@@ -13,23 +13,25 @@ namespace Bdaya.Firebase.Auth;
 
 public static class ServicesExt
 {
-    public static AuthenticationBuilder AddFirebaseAuthJwt(this IServiceCollection services, FirebaseAuthSettings settings)
+    public static AuthenticationBuilder AddFirebaseAuthJwt(this AuthenticationBuilder b, FirebaseAuthSettings settings, string schemaName = "Bearer")
     {
         var issuer = "https://securetoken.google.com/" + settings.FirebaseProjectId;
         var metadataAddress = $"{issuer}/.well-known/openid-configuration";
         var configurationManager = new ConfigurationManager<OpenIdConnectConfiguration>(metadataAddress, new OpenIdConnectConfigurationRetriever());
-        return services.AddAuthentication(o =>
-         {
-             o.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-             o.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-             o.DefaultSignInScheme = JwtBearerDefaults.AuthenticationScheme;
-         }).AddJwtBearer(options =>
-         {
-             options.IncludeErrorDetails = true;
-             options.RefreshOnIssuerKeyNotFound = true;
-             options.MetadataAddress = metadataAddress;
-             options.ConfigurationManager = configurationManager;
-             options.Audience = settings.FirebaseProjectId;
-         });
+        // b = b.AddAuthentication(o =>
+        //{
+        //    o.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+        //    o.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+        //    o.DefaultSignInScheme = JwtBearerDefaults.AuthenticationScheme;
+        //});
+        return b.AddJwtBearer(schemaName, options =>
+        {
+            options.IncludeErrorDetails = true;
+            options.RefreshOnIssuerKeyNotFound = true;
+            options.MetadataAddress = metadataAddress;
+            options.ConfigurationManager = configurationManager;
+            options.Audience = settings.FirebaseProjectId;
+
+        });
     }
 }
