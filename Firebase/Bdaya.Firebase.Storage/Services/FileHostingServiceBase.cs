@@ -18,9 +18,9 @@ public abstract class FileHostingServiceBase<TFile> : IFileHostingService<TFile>
 
     public abstract string GetFileSubPath(string UploaderId, string fileName, string contentType);
     public abstract Task<IEnumerable<TFile>> AddFilesToDb(IReadOnlyList<UploadFileProposal> files, CancellationToken cancellationToken = default);
-    public abstract Task<Dictionary<string, TFile>> GetFilesByHash(string userId, IReadOnlySet<string> hash);
+    public abstract Task<Dictionary<string, TFile>> GetFilesByHash(string userId, IReadOnlyCollection<string> hash);
 
-
+    public virtual string GetUserId(string? userId) => userId ?? "Anonymous";
     /// <summary>
     /// Uploads multiple files to a server
     /// </summary>
@@ -29,15 +29,12 @@ public abstract class FileHostingServiceBase<TFile> : IFileHostingService<TFile>
     /// <returns></returns>
     public virtual async Task<IEnumerable<TFile>> UploadFiles(string? UserId, IEnumerable<IFormFile> files, CancellationToken cancellationToken = default)
     {
-        if (UserId == null)
-        {
-            UserId = "Anonymous";
-        }
+        UserId = GetUserId(UserId);
         if (files == null)
         {
             return Array.Empty<TFile>();
         }
-
+        files = files.Where(x => x is not null);
         var provider = new FileExtensionContentTypeProvider();
 
         var toAddList = new List<UploadFileProposal>();

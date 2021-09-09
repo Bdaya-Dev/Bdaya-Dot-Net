@@ -3,7 +3,7 @@
 
 namespace Bdaya.Firebase.Firestore;
 
-public abstract class FirestoreAuthListenerBase
+public abstract class FirestoreAuthListenerBase 
 {
     protected readonly FirestoreDb _db;
     protected readonly AuthListenerSettings _settings;
