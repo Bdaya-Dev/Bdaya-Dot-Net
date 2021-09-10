@@ -1,10 +1,10 @@
 namespace Bdaya.Mappers;
 
-public interface IMapTo<TTo>
+public interface IMapTo<in TTo>
 {
     void AssignValuesTo(TTo to);
 }
-public interface IMapToCreate<TTo>
+public interface IMapToCreate<out TTo>
 {
     TTo MapTo();
 }
