@@ -2,7 +2,7 @@
 
 public static class ExceptionMiddlewareInstaller
 {
-    public static IApplicationBuilder ConfigureExceptionMiddleware(this IApplicationBuilder app)
+    public static IApplicationBuilder UseBdayaExceptionMiddleware(this IApplicationBuilder app)
     {
         return app.UseMiddleware<ExceptionMiddleware>();
     }
