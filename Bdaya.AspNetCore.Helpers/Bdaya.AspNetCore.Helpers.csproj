@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<PackageId>Bdaya.AspNetCore.Helpers</PackageId>
+		<PackageDescription>Common Asp.net core extensions</PackageDescription>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
+	  <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="5.0.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\Bdaya.Common\Bdaya.Common.csproj" />
+	</ItemGroup>
+
+	<Import Project="../Shared.targets" />
+</Project>
