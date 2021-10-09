@@ -1,0 +1,120 @@
+﻿@using Microsoft.AspNetCore.Components.Forms
+<div style="position:relative; width: @Width; height:@Height">
+    <div style="        position: absolute;
+        background-image: url( @Image );
+        display: block;
+        height: @Height;
+        width:100%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center
+">
+        <span style="top:7rem">
+            <InputFile id="@_id" OnChange="UploadFile" hidden multiple />
+
+            <label type="button"
+                   class="bdaya-button-root bdaya-icon-button bdaya-animate-ripple bdaya-animate-ripple-icon"
+                   for="@_id">
+                <span>
+                    <svg class="bdaya-icon-root bdaya-svg-icon  mud-inherit-text bdaya-icon-size-large"
+                         focusable="false" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M0 0h24v24H0z" fill="none"></path>
+                    <circle cx="12" cy="12" r="3.2"></circle>
+                    <path d="M9 2L7.17 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2h-3.17L15 2H9zm3 15c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5z"></path></svg>
+                </span>
+            </label>
+        </span>
+    </div>
+</div>
+
+
+
+<style>
+    .bdaya-button-root {
+        color: inherit;
+        border: 0;
+        cursor: pointer;
+        margin: 0;
+        display: inline-flex;
+        outline: 0;
+        padding: 0;
+        position: relative;
+        align-items: center;
+        user-select: none;
+        border-radius: 0;
+        vertical-align: middle;
+        -moz-appearance: none;
+        justify-content: center;
+        text-decoration: none;
+        background-color: transparent;
+        -webkit-appearance: none;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    /* The Icon Button class*/
+    .bdaya-icon-button {
+        flex: 0 0 auto;
+        padding: 12px;
+        overflow: visible;
+        font-size: 1.5rem;
+        text-align: center;
+        transition: background-color 150ms cubic-bezier(.4,0,.2,1) 0ms;
+        border-radius: 50%;
+        color: #2196f3;
+    }
+
+    /* The Ripple enimation effect*/
+    .bdaya-animate-ripple {
+        position: relative;
+        overflow: hidden;
+        transform: translate3d(0,0,0);
+    }
+
+        .bdaya-animate-ripple:after {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            background-image: radial-gradient(circle,#000 10%,transparent 10.01%);
+            background-repeat: no-repeat;
+            background-position: 50%;
+            transform: scale(10,10);
+            opacity: 0;
+            transition: transform .3s,opacity 1s;
+        }
+
+        .bdaya-animate-ripple:active:after {
+            transform: scale(0,0);
+            opacity: .1;
+            transition: 0s;
+        }
+
+    .bdaya-animate-ripple-icon:after {
+        transform: scale(7,7);
+    }
+
+
+    /* Bdaya Icon*/
+
+    .bdaya-icon-root {
+        width: 1em;
+        height: 1em;
+        display: inline-block;
+        transition: fill 200ms cubic-bezier(.4,0,.2,1) 0ms;
+        flex-shrink: 0;
+        user-select: none;
+    }
+
+        .bdaya-icon-root.bdaya-svg-icon {
+            fill: #2196f3;
+        }
+
+
+    .bdaya-icon-size-large {
+        font-size: 2.25rem;
+    }
+</style>

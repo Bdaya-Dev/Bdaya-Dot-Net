@@ -1,0 +1,214 @@
+﻿@using Microsoft.AspNetCore.Components.Forms
+<div style="position:relative; width: @Width; height:@Height">
+    <div style="        position: absolute;
+        background-image: url( @(Images.Any() ? Images[Index]: @DefaultImage) );
+        display: block;
+        height: @Height;
+        width:100%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center
+">
+        <!--Add Files Button-->
+
+        <InputFile id="@_id" OnChange="UploadFiles" hidden multiple />
+
+        <label style="top:10px"
+               type="button"
+               class="bdaya-button-root bdaya-icon-button bdaya-animate-ripple bdaya-animate-ripple-icon"
+               for="@_id">
+            <span>
+                <svg class="bdaya-icon-root bdaya-svg-icon  bdaya-icon-size-large"
+                     focusable="false" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M0 0h24v24H0z" fill="none"></path>
+                    <circle cx="12" cy="12" r="3.2"></circle>
+                    <path d="M9 2L7.17 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2h-3.17L15 2H9zm3 15c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5z"></path>
+                </svg>
+            </span>
+        </label>
+
+
+        @if (HasPrev())
+        {
+
+            <button style="top:70%;right:3.5rem"
+                @onclick="()=> Index--"
+                type="button" class="bdaya-button-root  bdaya-fab-Secondary bdaya-icon-button-fab bdaya-animate-ripple bdaya-animate-ripple-icon">
+                <span>
+                    <svg class="bdaya-icon-root bdaya-svg-icon-secodary  bdaya-icon-size-small" focusable="false" viewBox="0 0 24 24" aria-hidden="true"><!--!--><path d="M14 7l-5 5 5 5V7z"></path><path d="M24 0v24H0V0h24z" fill="none"></path></svg>
+                </span>
+            </button>
+        }
+        else
+        {
+            <button style="top:70%;right:3.5rem"
+                type="button" class="bdaya-button-root  bdaya-fab-Disabled bdaya-icon-button-fab ">
+                <span>
+                    <svg class="bdaya-icon-root bdaya-svg-icon-Disabled  bdaya-icon-size-small" focusable="false" viewBox="0 0 24 24" aria-hidden="true"><!--!--><path d="M14 7l-5 5 5 5V7z"></path><path d="M24 0v24H0V0h24z" fill="none"></path></svg>
+                </span>
+            </button>
+        }
+
+        @if (CanDelete())
+        {
+            <button style="top:70%;right:3.2rem"
+                @onclick="async () => await OnDelete()"
+                type="button" class="bdaya-button-root  bdaya-fab-Secondary bdaya-icon-button-fab bdaya-animate-ripple bdaya-animate-ripple-icon">
+
+                <svg class="bdaya-icon-root bdaya-svg-icon-secodary  bdaya-icon-size-small" focusable="false" viewBox="0 0 24 24" aria-hidden="true"><!--!--><path d="M0 0h24v24H0z" fill="none"></path><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"></path></svg>
+            </button>
+        }
+        else
+        {
+            <button style="top:70%;right:3.2rem"
+                type="button" class="bdaya-button-root  bdaya-fab-Disabled bdaya-icon-button-fab ">
+
+                <svg class="bdaya-icon-root bdaya-svg-icon-Disabled  bdaya-icon-size-small" focusable="false" viewBox="0 0 24 24" aria-hidden="true"><!--!--><path d="M0 0h24v24H0z" fill="none"></path><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"></path></svg>
+            </button>
+        }
+
+        @if (HasNext())
+        {
+            <button @onclick="() => Index++"
+                style="top:70%; right:3rem" type="button" class="bdaya-button-root bdaya-icon-button-fab bdaya-fab-Secondary bdaya-animate-ripple bdaya-animate-ripple-icon">
+                <span>
+                    <svg class="bdaya-icon-root bdaya-svg-icon-secodary  bdaya-icon-size-small" focusable="false" viewBox="0 0 24 24" aria-hidden="true"><!--!--><path d="M10 17l5-5-5-5v10z"></path><path d="M0 24V0h24v24H0z" fill="none"></path></svg>
+                </span>
+            </button>
+        }
+        else
+        {
+            <button style="top:70%; right:3rem" type="button" class="bdaya-button-root bdaya-icon-button-fab bdaya-fab-Disabled ">
+                <span>
+                    <svg class="bdaya-icon-root bdaya-svg-icon-Disabled  bdaya-icon-size-small" focusable="false" viewBox="0 0 24 24" aria-hidden="true"><!--!--><path d="M10 17l5-5-5-5v10z"></path><path d="M0 24V0h24v24H0z" fill="none"></path></svg>
+                </span>
+            </button>
+        }
+
+    </div>
+</div>
+
+
+
+<style>
+    .bdaya-button-root {
+        color: inherit;
+        border: 0;
+        cursor: pointer;
+        margin: 0;
+        display: inline-flex;
+        outline: 0;
+        padding: 0;
+        position: relative;
+        align-items: center;
+        user-select: none;
+        border-radius: 0;
+        vertical-align: middle;
+        -moz-appearance: none;
+        justify-content: center;
+        text-decoration: none;
+        background-color: transparent;
+        -webkit-appearance: none;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    /* The Icon Button class*/
+    .bdaya-icon-button {
+        flex: 0 0 auto;
+        padding: 12px;
+        overflow: visible;
+        font-size: 1.5rem;
+        text-align: center;
+        transition: background-color 150ms cubic-bezier(.4,0,.2,1) 0ms;
+        border-radius: 50%;
+        color: #2196f3;
+    }
+
+    .bdaya-icon-button-fab {
+        flex: 0 0 auto;
+        padding: 6px;
+        overflow: visible;
+        font-size: 0.6rem;
+        text-align: center;
+        transition: background-color 150ms cubic-bezier(.4,0,.2,1) 0ms;
+        border-radius: 50%;
+        color: #2196f3;
+    }
+
+    /* The Ripple enimation effect*/
+    .bdaya-animate-ripple {
+        position: relative;
+        overflow: hidden;
+        transform: translate3d(0,0,0);
+    }
+
+    .bdaya-fab-Secondary {
+        color: white;
+        background-color: #ff4081;
+    }
+
+    .bdaya-fab-Disabled {
+        color: #808080;
+        background-color: rgb(134 134 141 / 0.40);
+    }
+
+    .bdaya-animate-ripple:after {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+        background-image: radial-gradient(circle,#000 10%,transparent 10.01%);
+        background-repeat: no-repeat;
+        background-position: 50%;
+        transform: scale(10,10);
+        opacity: 0;
+        transition: transform .3s,opacity 1s;
+    }
+
+    .bdaya-animate-ripple:active:after {
+        transform: scale(0,0);
+        opacity: .1;
+        transition: 0s;
+    }
+
+    .bdaya-animate-ripple-icon:after {
+        transform: scale(7,7);
+    }
+
+
+    /* Bdaya Icon*/
+
+    .bdaya-icon-root {
+        width: 1em;
+        height: 1em;
+        display: inline-block;
+        transition: fill 200ms cubic-bezier(.4,0,.2,1) 0ms;
+        flex-shrink: 0;
+        user-select: none;
+    }
+
+        .bdaya-icon-root.bdaya-svg-icon {
+            fill: #2196f3;
+        }
+
+        .bdaya-icon-root.bdaya-svg-icon-secodary {
+            fill: white;
+        }
+
+        .bdaya-icon-root.bdaya-svg-icon-Disabled {
+            fill: #ffffff;
+        }
+
+
+    .bdaya-icon-size-large {
+        font-size: 2.25rem;
+    }
+
+    .bdaya-icon-size-small {
+        font-size: 1.2rem;
+    }
+</style>

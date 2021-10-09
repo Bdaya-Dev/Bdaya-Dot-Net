@@ -30,7 +30,9 @@ Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "Bdaya.Firebase.Functions.Au
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bdaya.EFCore", "Bdaya.EFCore\Bdaya.EFCore.csproj", "{8488F196-80F8-4E81-B58D-3004F60C82D5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bdaya.AspNetCore.Helpers", "Bdaya.AspNetCore.Helpers\Bdaya.AspNetCore.Helpers.csproj", "{1347BECD-E43F-4D02-8CE0-E8742699DAE6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bdaya.AspNetCore.Helpers", "Bdaya.AspNetCore.Helpers\Bdaya.AspNetCore.Helpers.csproj", "{1347BECD-E43F-4D02-8CE0-E8742699DAE6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bdaya.Blazor.Helpers", "Bdaya.Blazor.Helpers\Bdaya.Blazor.Helpers.csproj", "{8FD97D46-A833-423F-9D8F-DF53514A1193}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -68,6 +70,10 @@ Global
 		{1347BECD-E43F-4D02-8CE0-E8742699DAE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1347BECD-E43F-4D02-8CE0-E8742699DAE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1347BECD-E43F-4D02-8CE0-E8742699DAE6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8FD97D46-A833-423F-9D8F-DF53514A1193}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FD97D46-A833-423F-9D8F-DF53514A1193}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FD97D46-A833-423F-9D8F-DF53514A1193}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FD97D46-A833-423F-9D8F-DF53514A1193}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
