@@ -11,6 +11,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<ProjectReference Include="..\..\Bdaya.Common\Bdaya.Common.csproj" />
 		<ProjectReference Include="..\Bdaya.Firebase.Common\Bdaya.Firebase.Common.csproj" />
 	</ItemGroup>
 

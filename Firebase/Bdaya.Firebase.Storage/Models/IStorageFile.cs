@@ -1,11 +1,12 @@
-﻿using System;
+﻿using Bdaya.Mappers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Bdaya.Firebase.Storage;
-public interface IStorageFile
+public interface IStorageFile : IMapFrom<IStorageFile>
 {
     /// <summary>
     /// This needs to be indexed
@@ -20,5 +21,17 @@ public interface IStorageFile
     string BucketName { get; set; }
     string ObjectName { get; set; }
     long FileSizeInBytes { get; set; }
-
+    void IMapFrom<IStorageFile>.AssignValuesFrom(IStorageFile from)
+    {
+        Md5Hash = from.Md5Hash;
+        FileName = from.FileName;
+        MediaLink = from.MediaLink;
+        UploaderId = from.UploaderId;
+        OriginalFileName = from.OriginalFileName;
+        ContentType = from.ContentType;
+        UploadedAt = from.UploadedAt;
+        BucketName = from.BucketName;
+        ObjectName = from.ObjectName;
+        FileSizeInBytes = from.FileSizeInBytes;
+    }
 }

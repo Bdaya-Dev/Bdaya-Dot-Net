@@ -61,9 +61,9 @@ public abstract class FileHostingServiceBase<TFile> : IFileHostingService<TFile>
             if (file.Length > 0)
             {
                 using var memoryStream = new MemoryStream();
-                await file.CopyToAsync(memoryStream);
+                await file.CopyToAsync(memoryStream, cancellationToken);
                 memoryStream.Seek(0, SeekOrigin.Begin);
-                var hash = (await memoryStream.GetHashMd5()).BytesToString();
+                var hash = (await memoryStream.GetHashMd5(cancellationToken: cancellationToken)).BytesToString();
                 if (hashesList.Contains(hash))
                 {
                     continue;
@@ -103,14 +103,14 @@ public abstract class FileHostingServiceBase<TFile> : IFileHostingService<TFile>
 
             }
         }
-        return (await AddFilesToDb(toAddList)).Concat(existingList);
+        return (await AddFilesToDb(toAddList, cancellationToken)).Concat(existingList);
     }
     public virtual async Task<Google.Apis.Storage.v1.Data.Object?> GetBucketObject(IStorageFile file, CancellationToken cancellationToken = default)
     {
         try
         {
             var objectName = _settings.BucketSubPath + GetFileSubPath(file.UploaderId, file.FileName, file.ContentType);
-            var res = await _storageClient.GetObjectAsync(_settings.BucketName, objectName);
+            var res = await _storageClient.GetObjectAsync(_settings.BucketName, objectName, cancellationToken: cancellationToken);
             if (res == null || res.TimeDeleted != null)
             {
                 return null;
