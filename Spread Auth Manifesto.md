@@ -110,7 +110,7 @@
        "ValueType" : ""
   }
   ```
-* you can use that class to handle that
+* you can use this class to handle that
     ```cs
     public class FirebaseClaimsTransformer : IClaimsTransformation
     {

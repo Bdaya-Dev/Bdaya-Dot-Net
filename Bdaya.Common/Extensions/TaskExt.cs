@@ -12,7 +12,7 @@ public static class TaskExt
             }
             else
             {
-                if (onFail == null) return default;
+                if (onFail is null) return default;
                 return onFail(t.Result);
             }
         });

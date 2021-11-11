@@ -3,7 +3,7 @@
 	<PropertyGroup>
 		<PackageId>Bdaya.Common</PackageId>
 		<PackageDescription>Common classes</PackageDescription>
-		
+		<RootNamespace>Bdaya</RootNamespace>
 	</PropertyGroup>
 	<Import Project="../Shared.targets" />
 
