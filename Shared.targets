@@ -1,6 +1,6 @@
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 	<PropertyGroup>
-		<TargetFrameworks>net5.0;net6.0</TargetFrameworks>
+		<TargetFramework>net6.0</TargetFramework>
 		<Version>6.0.0</Version>
 		<PackageIcon>icon.jpg</PackageIcon>
 		<Company>Bdaya-Dev</Company>
@@ -8,8 +8,13 @@
 		<RepositoryUrl>https://github.com/Bdaya-Dev/Bdaya-Dot-Net</RepositoryUrl>
 		<LangVersion>preview</LangVersion>
 		<ImplicitUsings>enable</ImplicitUsings>
+		<EnablePreviewFeatures>true</EnablePreviewFeatures>
+
 	</PropertyGroup>
 	<ItemGroup>
 		<None Include="../icon.jpg" Pack="true" Visible="false" PackagePath="" />
+		<PackageReference Include="SmartAnalyzers.CSharpExtensions.Annotations" Version="4.1.0" />
+
+		<Using Include="System.Diagnostics.CodeAnalysis"/>
 	</ItemGroup>
 </Project>
