@@ -32,7 +32,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bdaya.EFCore", "Bdaya.EFCor
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bdaya.AspNetCore.Helpers", "Bdaya.AspNetCore.Helpers\Bdaya.AspNetCore.Helpers.csproj", "{1347BECD-E43F-4D02-8CE0-E8742699DAE6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bdaya.Blazor.Helpers", "Bdaya.Blazor.Helpers\Bdaya.Blazor.Helpers.csproj", "{8FD97D46-A833-423F-9D8F-DF53514A1193}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bdaya.Blazor.Helpers", "Bdaya.Blazor.Helpers\Bdaya.Blazor.Helpers.csproj", "{8FD97D46-A833-423F-9D8F-DF53514A1193}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bdaya.MongoDB", "Bdaya.MongoDB\Bdaya.MongoDB.csproj", "{F90C1CD6-8694-45B8-8EE0-043C92753504}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -74,6 +76,10 @@ Global
 		{8FD97D46-A833-423F-9D8F-DF53514A1193}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8FD97D46-A833-423F-9D8F-DF53514A1193}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8FD97D46-A833-423F-9D8F-DF53514A1193}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F90C1CD6-8694-45B8-8EE0-043C92753504}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F90C1CD6-8694-45B8-8EE0-043C92753504}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F90C1CD6-8694-45B8-8EE0-043C92753504}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F90C1CD6-8694-45B8-8EE0-043C92753504}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

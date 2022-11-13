@@ -6,12 +6,14 @@ public class PaginatedList<T>
     /// One-based Index
     /// </summary>
     public int PageIndex { get; init; }
-    public List<T> Page { get; init; } = new();
+    public required List<T> Page { get; set; }
     public int PageSize { get; init; }
     public int TotalCount { get; init; }
     public PaginatedList()
     {
     }
+
+    [SetsRequiredMembers]
     public PaginatedList(int pageIndex, int pageSize, int totalCount, List<T> page)
     {
         PageIndex = pageIndex;

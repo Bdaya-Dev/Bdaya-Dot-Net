@@ -7,7 +7,7 @@ public interface IMapFrom<in TFrom>
     void AssignValuesFrom(TFrom from);
 }
 
-#if NET6_0_OR_GREATER
+#if NET7_0_OR_GREATER
 
 public interface IMapFromCreate<out TSelf, in TFrom>
 {
