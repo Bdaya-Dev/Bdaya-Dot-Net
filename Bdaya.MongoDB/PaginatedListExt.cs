@@ -2,7 +2,7 @@
 using Bdaya.Responses;
 
 namespace MongoDB.Driver.Linq;
-public static class PaginatedList
+public static class PaginatedListExt
 {
     public static async Task<PaginatedList<TDestination>> PaginatedListAsync<TDestination>(this IMongoQueryable<TDestination> queryable, int pageNumber, int pageSize)
     {
