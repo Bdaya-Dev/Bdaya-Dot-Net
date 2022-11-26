@@ -36,6 +36,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bdaya.Blazor.Helpers", "Bda
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bdaya.MongoDB", "Bdaya.MongoDB\Bdaya.MongoDB.csproj", "{F90C1CD6-8694-45B8-8EE0-043C92753504}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bdaya.AutoMapper", "Bdaya.AutoMapper\Bdaya.AutoMapper.csproj", "{AC403A36-4558-45E9-8303-59410B8380C6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -80,6 +82,10 @@ Global
 		{F90C1CD6-8694-45B8-8EE0-043C92753504}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F90C1CD6-8694-45B8-8EE0-043C92753504}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F90C1CD6-8694-45B8-8EE0-043C92753504}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC403A36-4558-45E9-8303-59410B8380C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC403A36-4558-45E9-8303-59410B8380C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC403A36-4558-45E9-8303-59410B8380C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC403A36-4558-45E9-8303-59410B8380C6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

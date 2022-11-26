@@ -63,7 +63,7 @@ public abstract class FileHostingServiceBase<TFile> : IFileHostingService<TFile>
                 using var memoryStream = new MemoryStream();
                 await file.CopyToAsync(memoryStream, cancellationToken);
                 _ = memoryStream.Seek(0, SeekOrigin.Begin);
-                var hash = (await memoryStream.GetHashMd5(cancellationToken: cancellationToken)).BytesToString();
+                var hash = (await memoryStream.GetHashMd5(cancellationToken: cancellationToken)).BytesToBase64String();
                 if (!hashesList.Add(hash))
                 {
                     continue;

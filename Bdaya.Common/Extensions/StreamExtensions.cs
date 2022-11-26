@@ -19,7 +19,7 @@ public static class StreamExtensions
         return res;
     }
 
-    public static string BytesToString(this byte[] bytes)
+    public static string BytesToBase64String(this byte[] bytes)
     {
         return Convert.ToBase64String(bytes).ToUpperInvariant();
     }

@@ -29,7 +29,7 @@ public static class FileStorageExt
             var memoryStream = new MemoryStream();
             await file.CopyToAsync(memoryStream, cancellationToken);
             memoryStream.Seek(0, SeekOrigin.Begin);
-            var hash = (await memoryStream.GetHashMd5(cancellationToken: cancellationToken)).BytesToString();
+            var hash = (await memoryStream.GetHashMd5(cancellationToken: cancellationToken)).BytesToBase64String();
             if (result.ContainsKey(hash))
             {
                 continue;

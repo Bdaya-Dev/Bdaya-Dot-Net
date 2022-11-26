@@ -6,8 +6,6 @@
 		<RootNamespace>Bdaya</RootNamespace>
 	</PropertyGroup>
 	<Import Project="../Shared.targets" />
-	<ItemGroup>
-		<PackageReference Include="MediatR" Version="11.0.0" />
-	</ItemGroup>
+	
 
 </Project>
