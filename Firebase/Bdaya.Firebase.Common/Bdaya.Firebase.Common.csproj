@@ -1,6 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-	<PropertyGroup>		
+	<Import Project="../FirebaseShared.targets" />
+	<PropertyGroup>
 		<PackageId>Bdaya.Firebase.Common</PackageId>
 		<PackageDescription>Common Helpers for firebase</PackageDescription>
 	</PropertyGroup>
@@ -10,5 +11,4 @@
 		<Folder Include="Settings\" />
 	</ItemGroup>
 
-	<Import Project="../FirebaseShared.targets" />
 </Project>

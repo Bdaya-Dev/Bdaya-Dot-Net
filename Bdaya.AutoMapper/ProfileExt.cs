@@ -138,11 +138,11 @@ public static class ProfileExt
                 o.MapFrom(
                     (src, dst, member, context) =>
                     {
-                        if (!context.Items.TryGetValueCasted(entryName, out TEntryType? value))
+                        if (!context.Items.TryGetValue(entryName, out var valueRaw))
                         {
                             if (defaultIfNotPresent != null)
                             {
-                                value ??= defaultIfNotPresent();
+                                valueRaw = defaultIfNotPresent();
                             }
                             else
                             {
@@ -151,9 +151,51 @@ public static class ProfileExt
                                 );
                             }
                         }
+                        if (valueRaw is not TEntryType value)
+                        {
+                            throw new AutoMapperMappingException(
+                                $"Type Mismatch in {nameof(ResolutionContext)}.{nameof(context.Items)}: '{entryName}' has expected type {typeof(TEntryType)}, but was of type {valueRaw?.GetType()}"
+                            );
+                        }
+
                         return mapFrom(src, context, value);
                     }
                 )
         );
     }
+
+    /// <summary>
+    /// Maps members from <typeparamref name="TRes"/> to <typeparamref name="TMember"/>
+    /// </summary>
+    /// <typeparam name="TSource"></typeparam>
+    /// <typeparam name="TDestination"></typeparam>
+    /// <typeparam name="TMember"></typeparam>
+    /// <typeparam name="TRes"></typeparam>
+    /// <param name="src"></param>
+    /// <param name="destinationMember"></param>
+    /// <param name="srcMember"></param>
+    /// <returns></returns>
+    public static IMappingExpression<TSource, TDestination> ForMemberMapFromSubType<
+        TSource,
+        TSourceSub,
+        TDestination,
+        TMember,
+        TRes
+    >(
+        this IMappingExpression<TSource, TDestination> src,
+        Expression<Func<TDestination, TMember>> destinationMember,
+        Func<TSourceSub, TRes> srcMember
+    )
+        where TSourceSub : TSource =>
+        src.ForMember(
+            destinationMember,
+            options =>
+            {
+                options.PreCondition((src, context) => src is TSourceSub);
+
+                options.MapFrom(s => srcMember((TSourceSub)s!));
+
+                options.MapAtRuntime();
+            }
+        );
 }

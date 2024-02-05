@@ -1,5 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
 
+	<Import Project="../Shared.targets" />
 	<PropertyGroup>
 		<PackageId>Bdaya.Blazor.Helpers</PackageId>
 		<PackageDescription>Common Blazor extensions</PackageDescription>
@@ -8,12 +9,16 @@
 		<SupportedPlatform Include="browser" />
 	</ItemGroup>
 
-	<ItemGroup>
-		<PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="5.0.10" />
+	<ItemGroup Condition=" '$(TargetFramework)' == 'net7.0' ">
+		<PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="7.0.15" />
 	</ItemGroup>
+	<ItemGroup Condition=" '$(TargetFramework)' == 'net8.0' ">
+		<PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="8.0.1" />
+	</ItemGroup>
+	
+	
 	<ItemGroup>
 		<ProjectReference Include="..\Bdaya.Common\Bdaya.Common.csproj" />
 	</ItemGroup>
 
-	<Import Project="../Shared.targets" />
 </Project>

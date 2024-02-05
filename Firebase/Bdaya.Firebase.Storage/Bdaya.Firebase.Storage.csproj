@@ -1,13 +1,14 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
+	<Import Project="../FirebaseShared.targets" />
 	<PropertyGroup>
 		<PackageId>Bdaya.Firebase.Storage</PackageId>
 		<PackageDescription>Helpers for uploading files to firebase storage</PackageDescription>
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Google.Cloud.Storage.V1" Version="3.6.0" />
-		<PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="2.2.0" />
+		<PackageReference Include="Google.Cloud.Storage.V1" Version="4.7.0" />
+		<FrameworkReference Include="Microsoft.AspNetCore.App" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -15,5 +16,4 @@
 		<ProjectReference Include="..\Bdaya.Firebase.Common\Bdaya.Firebase.Common.csproj" />
 	</ItemGroup>
 
-	<Import Project="../FirebaseShared.targets" />
 </Project>

@@ -16,9 +16,5 @@ public class ExceptionWithCode : Exception
     {
     }
 
-    protected ExceptionWithCode(SerializationInfo info, StreamingContext context) : base(info, context)
-    {
-    }
-
     public int ReturnCode { get; set; } = 400;    
 }

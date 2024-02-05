@@ -1,14 +1,17 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
+	<Import Project="../FirebaseShared.targets" />
 	<PropertyGroup>
 		<PackageId>Bdaya.Firebase.Auth</PackageId>
 		<PackageDescription>Helpers for using jwt tokens created by firebase auth</PackageDescription>
 	</PropertyGroup>
 
-	<ItemGroup>
-		<PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.10" />
+	<ItemGroup Condition=" '$(TargetFramework)' == 'net7.0' ">
+		<PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="7.0.15" />
+	</ItemGroup>
+	<ItemGroup Condition=" '$(TargetFramework)' == 'net8.0' ">
+		<PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.1" />
 	</ItemGroup>
 
-	<Import Project="../FirebaseShared.targets" />
 
 </Project>

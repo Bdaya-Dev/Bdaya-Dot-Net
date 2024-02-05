@@ -1,16 +1,18 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
+	<Import Project="../Shared.targets" />
+	
 	<PropertyGroup>
 		<PackageId>Bdaya.AutoMapper</PackageId>
 		<PackageDescription>AutoMapper Helpers</PackageDescription>
 		<RootNamespace>Bdaya</RootNamespace>
 	</PropertyGroup>
-	<Import Project="../Shared.targets" />
+	
 	<ItemGroup>
 		<ProjectReference Include="..\Bdaya.Common\Bdaya.Common.csproj" />
 	</ItemGroup>
 	<ItemGroup>
-	  <PackageReference Include="AutoMapper" Version="12.0.0" />
+	  <PackageReference Include="AutoMapper" Version="12.0.1" />
 	</ItemGroup>
  
 </Project>
