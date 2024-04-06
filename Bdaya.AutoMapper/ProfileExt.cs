@@ -23,10 +23,18 @@ public static class ProfileExt
     >(
         this IMappingExpression<TSource, TDestination> src,
         Expression<Func<TDestination, TMember>> destinationMember,
-        Expression<Func<TSource, TRes>> srcMember
+        Expression<Func<TSource, TRes>> srcMember,
+        bool conditionNotNull = true
     )
     {
-        return src.ForMember(destinationMember, o => o.MapFrom(srcMember));
+        return src.ForMember(destinationMember, o =>
+        {
+            if (conditionNotNull)
+            {
+                o.Condition((src, target, member) => member is not null);
+            }
+            o.MapFrom(srcMember);
+        });
     }
 
     /// <summary>
